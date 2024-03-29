@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from home.EmailBackEnd import EmailBackEnd
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -15,7 +16,8 @@ def dologin(request):
             login(request, user)
             user_type = user.user_type
             if user_type == '1':
-                return HttpResponse("HOd Login")
+                # return HttpResponse("HOd Login")
+                return redirect("/hod/home")
             elif user_type == '2':
                 return HttpResponse("student")
             elif user_type == '3':
@@ -26,6 +28,10 @@ def dologin(request):
         else:
             messages.error(request, "username and password invalid")
             return redirect("/")
+
+def dologout(request):
+    logout(request)
+    return redirect("/")
 
 
 
