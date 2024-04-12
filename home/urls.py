@@ -7,6 +7,9 @@ urlpatterns = [
     path('login', dologin, name='dologin'),
     path('logout', dologout, name='dologout'),
     path('hod/home', hod, name='hod/home'),
+    path('profile', profile, name='profile'),
+    path('profile/update',PROFILE_UPDATE, name='profile_update'),
+
 
 
 ]
