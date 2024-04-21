@@ -9,6 +9,7 @@ urlpatterns = [
     path('hod/home', hod, name='hod/home'),
     path('profile', profile, name='profile'),
     path('profile/update',PROFILE_UPDATE, name='profile_update'),
+    path('add_student',Add_student, name='add_student'),
 
 
 
